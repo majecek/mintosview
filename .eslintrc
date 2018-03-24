@@ -1,0 +1,14 @@
+{
+  "extends": ["standard", "standard-react"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "off",
+    "prefer-arrow-callback": 2,
+  },
+  "globals": {
+    "_": true
+  }
+}
