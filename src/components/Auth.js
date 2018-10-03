@@ -1,18 +1,14 @@
-import {firebaseDB, usersColl} from '../firebaseSettings';
+import { firestore } from '../firebaseSettings';
 
 export function saveUser(user) {
-    console.log(user)
-    console.log(user.uid)
-    usersColl.doc(`${user.uid}`).set({
-        displayName: user.displayName,
-        email: user.email,
-        providerData: user.providerData
-    })
+    if (user) {
+        console.log("user:", user)
+        firestore.collection("users").doc(`${user.uid}`).set({
+            displayName: user.displayName,
+            email: user.email,
+            providerData: user.providerData
+        })
+        this.setState()
+    }
 
-    // firebaseDB.ref(`users/${user.uid}`)
-    //     .update({
-    //         displayName: user.displayName,
-    //         email: user.email,
-    //         providerData: user.providerData
-    //     })
 }
